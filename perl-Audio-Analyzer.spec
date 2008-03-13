@@ -5,29 +5,32 @@
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	Audio
 %define	pnam	Analyzer
-Summary:	Audio::Analyzer
-#Summary(pl):	
+Summary:	Audio::Analyzer - analyzing music files with FFT
+Summary(pl.UTF-8):	Audio::Analyzer - analiza plików dźwiękowych przy użyciu FFT
 Name:		perl-Audio-Analyzer
 Version:	0.03
 Release:	0.1
-# same as perl (REMOVE THIS LINE IF NOT TRUE)
+# same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/Audio/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	02420510e2afb67fc0f020c2dd58d12e
+URL:		http://search.cpan.org/dist/Audio-Analyzer/
+BuildRequires:	perl-Math-FFT
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
-BuildRequires:	perl(Math::FFT)
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-This module makes it easy to analyze music files with the Fast Fourier 
-Transform and sync the output of the FFT in time for visual representation.
+This module makes it easy to analyze music files with the Fast Fourier
+Transform and sync the output of the FFT in time for visual
+representation.
 
-
-# %description -l pl
-# TODO
+%description -l pl.UTF-8
+Ten moduł ułatwia analizę plików muzycznych przy użyciu szybkiej
+transformaty Fouriera i synchronizację wyjścia FFT w czasie w celu
+reprezentacji graficznej.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
@@ -52,5 +55,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc Changes README
 %{perl_vendorlib}/Audio/*.pm
-#%{perl_vendorlib}/Audio/Analyzer
 %{_mandir}/man3/*
