@@ -8,13 +8,13 @@
 Summary:	Audio::Analyzer - analyzing music files with FFT
 Summary(pl.UTF-8):	Audio::Analyzer - analiza plików dźwiękowych przy użyciu FFT
 Name:		perl-Audio-Analyzer
-Version:	0.20
+Version:	0.21
 Release:	0.1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/Audio/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	13966071719f3de76978571d784d0983
+# Source0-md5:	a82fd16a5b8a09a8fa54fa5ba846d194
 URL:		http://search.cpan.org/dist/Audio-Analyzer/
 BuildRequires:	perl-Math-FFT
 BuildRequires:	perl-devel >= 1:5.8.0
